@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PassInfoService } from './pass-info.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'WhackAMole';
+
+  
+  mathRandom(){
+
+    const mole = new PassInfoService();
+    mole.mathRandom();
+
+  }
 }

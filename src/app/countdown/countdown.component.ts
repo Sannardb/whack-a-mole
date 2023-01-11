@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PassInfoService } from '../pass-info.service';
 
 @Component({
   selector: 'app-countdown',
@@ -12,22 +13,9 @@ export class CountdownComponent {
   points: number = 0;
   clicked: boolean = false;
 
-
   countdownTimer(){
-    this.counter = 6;
-    this.points = 0;
-    this.gameOver = '';
-
-    const interval = setInterval(() => {
-      this.counter--;
-      console.log(this.counter);
-
-    if( this.counter <= 0 ) {
-      clearInterval(interval);
-      this.clicked = false;
-      this.gameOver = 'Game Over, start again';
-      }
-    }, 1000);
+    const timer = new PassInfoService();
+    timer.countdownTimer();
   }
   
 }
