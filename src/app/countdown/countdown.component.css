@@ -1,0 +1,28 @@
+.wrapper {
+  margin: 50px 50px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.time, .points {
+  font-size: 2em;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.startBtn {
+
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  padding: 10px 16px;
+}
+
+.startBtn:hover {
+  background-color: #F082AC;
+}

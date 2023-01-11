@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <div class="time">
+     <span>Time Remaining: </span>
+     <span>{{counter}}</span>
+  </div>
+  <div class="points">
+      <span>Points: </span>
+      <span>{{points}}</span>
+  </div>
+  <button class="startBtn" [disabled]="clicked" (click)="countdownTimer(); clicked = true;">Start Game</button>
+</div>
+<span class="gameOver">{{gameOver}}</span>
