@@ -24,9 +24,10 @@ export class CountdownComponent {
 
     if( this.counter <= 0 ) {
       clearInterval(interval);
-      this.gameOver = 'Game Over, start again';
+      this.clicked = false;
+      this.gameOver = 'Game Over, start again'
       }
     }, 1000);
   }
-
+  
 }
