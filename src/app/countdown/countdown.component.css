@@ -26,3 +26,11 @@
 .startBtn:hover {
   background-color: #F082AC;
 }
+
+.gameOver {
+  display: flex;
+  justify-content: center;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: red;
+  font-size: 40px;
+}
