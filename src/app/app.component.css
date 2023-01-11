@@ -8,13 +8,13 @@
 }
 
 .square {
-  position: relative;
+  /* position: relative; */
   border: 1px solid black;
   width: 100px;
   height: 100px;
 }
 
-.mole {
+/* .mole {
   position: absolute;
   z-index: 1;
   height: 70px;
@@ -32,4 +32,4 @@
   to {
     bottom: 0;
   }
-}
+} */

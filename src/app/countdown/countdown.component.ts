@@ -16,16 +16,16 @@ export class CountdownComponent {
   countdownTimer(){
     this.counter = 6;
     this.points = 0;
+    this.gameOver = '';
 
     const interval = setInterval(() => {
       this.counter--;
-      this.gameOver = '';
       console.log(this.counter);
 
     if( this.counter <= 0 ) {
       clearInterval(interval);
       this.clicked = false;
-      this.gameOver = 'Game Over, start again'
+      this.gameOver = 'Game Over, start again';
       }
     }, 1000);
   }
