@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { PassInfoService } from './pass-info.service';
 
 
 @Component({
@@ -9,11 +8,4 @@ import { PassInfoService } from './pass-info.service';
 })
 export class AppComponent {
 
-  
-  mathRandom(){
-
-    const mole = new PassInfoService();
-    mole.mathRandom();
-
-  }
 }

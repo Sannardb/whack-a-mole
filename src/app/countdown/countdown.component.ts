@@ -8,14 +8,11 @@ import { PassInfoService } from '../pass-info.service';
 })
 export class CountdownComponent {
 
-  counter: number = 0;
-  gameOver: string = '';
-  points: number = 0;
-  clicked: boolean = false;
 
-  countdownTimer(){
-    const timer = new PassInfoService();
-    timer.countdownTimer();
-  }
-  
+  constructor(public _passInfoService: PassInfoService) {}
+
+   countdownTimer(){
+     const timer = new PassInfoService();
+     timer.countdownTimer();
+   }
 }
