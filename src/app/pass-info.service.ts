@@ -25,14 +25,21 @@ export class PassInfoService {
 
     const interval = setInterval(() => {
       this.counter--;
-      console.log(this.counter);
-
-    if( this.counter <= 0 ) {
-      clearInterval(interval);
-      this.clicked = false;
-      this.gameOver = 'Game Over, start again';
-      }
+      
+      if( this.counter <= 0 ) {
+        clearInterval(interval);
+        this.clicked = false;
+        this.gameOver = 'Game Over, start again';
+        }
     }, 1000);
   }
+
+  moleHole(){
+ 
+  }
+
+  
+
+  
 
 }

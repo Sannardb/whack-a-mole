@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { LayoutComponent } from './layout/layout.component';
+import { MoleHoleComponent } from './mole-hole/mole-hole.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { LayoutComponent } from './layout/layout.component';
     AppComponent,
     CountdownComponent,
     LayoutComponent,
+    MoleHoleComponent,
   ],
   imports: [
     BrowserModule,
