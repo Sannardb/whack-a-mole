@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PassInfoService } from '../pass-info.service';
+import { State } from '../state';
 
 @Component({
   selector: 'app-mole-hole',
@@ -11,10 +12,11 @@ import { PassInfoService } from '../pass-info.service';
 })
 export class MoleHoleComponent {
 
-    mathRandom(){
-      const mole = new PassInfoService();
-      mole.mathRandom();
-     }
+  state!: State;
+
+  // moles:Array<object> = [this.state];
+
+  
   
 
 }

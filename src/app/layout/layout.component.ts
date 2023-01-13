@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { PassInfoService } from '../pass-info.service';
+import { State } from '../state';
+
 
 @Component({
   selector: 'app-layout',
@@ -8,13 +10,25 @@ import { PassInfoService } from '../pass-info.service';
 })
 export class LayoutComponent {
 
-  constructor(public _passInfoService: PassInfoService) {}
-
-  showMole(){
-
-    const mole = new PassInfoService();
-    return mole.mathRandom();
-
+  
+  constructor(public _passInfoService: PassInfoService) {
+    this.state = this._passInfoService.state;
   }
+
+  state!: State;
+
+  
+  
+   
+
+
+
+  // showMole(){
+
+  //   const mole = new PassInfoService();
+  //   return mole.mathRandom();
+
+  // }
+
 
 }

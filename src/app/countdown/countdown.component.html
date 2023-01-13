@@ -1,12 +1,12 @@
 <div class="wrapper">
   <div class="time">
      <span>Time Remaining: </span>
-     <span>{{_passInfoService.counter}}</span>
+     <span>{{_passInfoService.state.counter}}</span>
   </div>
   <div class="points">
       <span>Points: </span>
-      <span>{{_passInfoService.points}}</span>
+      <span>{{_passInfoService.state.points}}</span>
   </div>
-  <button class="startBtn" [disabled]="_passInfoService.clicked" (click)="_passInfoService.countdownTimer(); _passInfoService.clicked = true;">Start Game</button>
+  <button class="startBtn" [disabled]="_passInfoService.state.clicked" (click)="_passInfoService.countdownTimer(); _passInfoService.state.clicked = true;">Start Game</button>
 </div>
-<span class="gameOver">{{_passInfoService.gameOver}}</span>
+<span class="gameOver">{{_passInfoService.state.gameOver}}</span>

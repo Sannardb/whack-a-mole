@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PassInfoService } from '../pass-info.service';
+import { State } from '../state';
 
 @Component({
   selector: 'app-countdown',
@@ -9,10 +10,13 @@ import { PassInfoService } from '../pass-info.service';
 export class CountdownComponent {
 
 
-  constructor(public _passInfoService: PassInfoService) {}
+  constructor(public _passInfoService: PassInfoService) {
+    this.state = this._passInfoService.state;
+  }
+
+  state!: State;
 
    countdownTimer(){
-     const timer = new PassInfoService();
-     timer.countdownTimer();
+     this._passInfoService.countdownTimer();
    }
 }

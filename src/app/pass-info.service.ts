@@ -1,44 +1,47 @@
 import { Injectable } from '@angular/core';
+import { State } from './state';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PassInfoService {
 
-  counter: number = 6;
-  gameOver: string = '';
-  points: number = 0;
-  clicked: boolean = false;
-  moleImage: string = 'https://www.decalsground.com/img_b/vinyl-decal-sticker-780.jpg'
-  visible: boolean = false;
-  interval: any = null;
+ 
+  state: State = { 
+    points: 0, 
+    counter: 6, 
+    gameOver: '',
+    clicked: false,
+    moleImage: 'https://www.decalsground.com/img_b/vinyl-decal-sticker-780.jpg',
+    visible: false
+  }
 
+  interval: any;
 
   constructor() { }
 
   mathRandom(){
-    const mole = Math.floor((Math.random() * 25) + 1);
-    return mole;
+    Math.floor((Math.random() * 25) + 1);
   }
 
   countdownTimer(){
-    this.counter = 6;
-    this.points = 0;
-    this.gameOver = '';
+    this.state.counter = 6; // just to be able to play the game again without a reset button
+    this.state.points = 0;
+    this.state.gameOver = '';
 
     this.interval = setInterval(() => {
-      this.counter--;
+      this.state.counter--;
       
-      if( this.counter <= 0 ) {
+      if( this.state.counter <= 0 ) {
         clearInterval(this.interval);
-        this.clicked = false;
-        this.gameOver = 'Game Over, start again';
+        this.state.clicked = false;
+        this.state.gameOver = 'Game over, try again!'
         }
     }, 1000);
   }
 
   moleHole(){
- 
+
   }
 
   
