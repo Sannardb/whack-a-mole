@@ -11,6 +11,7 @@ export class PassInfoService {
   clicked: boolean = false;
   moleImage: string = 'https://www.decalsground.com/img_b/vinyl-decal-sticker-780.jpg'
   visible: boolean = false;
+  interval: any = null;
 
 
   constructor() { }
@@ -25,11 +26,11 @@ export class PassInfoService {
     this.points = 0;
     this.gameOver = '';
 
-    const interval = setInterval(() => {
+    this.interval = setInterval(() => {
       this.counter--;
       
       if( this.counter <= 0 ) {
-        clearInterval(interval);
+        clearInterval(this.interval);
         this.clicked = false;
         this.gameOver = 'Game Over, start again';
         }
