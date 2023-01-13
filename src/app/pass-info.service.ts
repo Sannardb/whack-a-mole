@@ -9,13 +9,15 @@ export class PassInfoService {
   gameOver: string = '';
   points: number = 0;
   clicked: boolean = false;
+  moleImage: string = 'https://www.decalsground.com/img_b/vinyl-decal-sticker-780.jpg'
+  visible: boolean = false;
 
 
   constructor() { }
 
   mathRandom(){
     const mole = Math.floor((Math.random() * 25) + 1);
-    console.log(mole);
+    return mole;
   }
 
   countdownTimer(){

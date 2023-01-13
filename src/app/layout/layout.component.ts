@@ -8,10 +8,12 @@ import { PassInfoService } from '../pass-info.service';
 })
 export class LayoutComponent {
 
-  mathRandom(){
+  constructor(public _passInfoService: PassInfoService) {}
+
+  showMole(){
 
     const mole = new PassInfoService();
-    mole.mathRandom();
+    return mole.mathRandom();
 
   }
 
