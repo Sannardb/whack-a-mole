@@ -19,4 +19,5 @@ export class CountdownComponent {
    countdownTimer(){
      this._passInfoService.countdownTimer();
    }
+   
 }

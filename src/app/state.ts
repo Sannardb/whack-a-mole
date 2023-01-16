@@ -5,4 +5,5 @@ export type State = {
   clicked: boolean;
   moleImage: string;
   visible: boolean;
+  moleUp: boolean;
 }
