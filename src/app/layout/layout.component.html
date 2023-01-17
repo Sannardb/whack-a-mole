@@ -1,33 +1,13 @@
-<!-- *ngIf="!_passInfoService.visible" -->
 <div class="square-container">
-  <ng-container *ngFor="let square of squares">  
-    <!-- <div class="square" id="1"><img src="{{_passInfoService.state.moleImage}}" width="100px"></div> -->
-    <div class="square" id="1" [ngStyle]="{'background-color': _passInfoService.state.moleUp ? 'red' : 'blue'}">
-      <!-- <img src="{{_passInfoService.state.moleImage}}" width="100px" alt="" (click)="whackedMole()"> -->
+  <ng-container *ngFor="let square of _passInfoService.state.ids; let i = index">  
+    <div class="square" id="{{i}}">
+      <img *ngIf="_passInfoService.state.ids[i] == true" 
+        id="{{i}}"
+        src="{{_passInfoService.state.moleImage}}" width="100px"
+        alt=""
+        (click)="whackedMole()">
     </div>
-    <!-- <div class="square" id="3"></div>
-    <div class="square" id="4"></div>
-    <div class="square" id="5"></div>
-    <div class="square" id="6"></div>
-    <div class="square" id="7"></div>
-    <div class="square" id="8"></div>
-    <div class="square" id="9"></div>
-    <div class="square" id="10"></div>
-    <div class="square" id="11"></div>
-    <div class="square" id="12"></div>
-    <div class="square" id="13"></div>
-    <div class="square" id="14"></div>
-    <div class="square" id="15"></div>
-    <div class="square" id="16"></div>
-    <div class="square" id="17"></div>
-    <div class="square" id="18"></div>
-    <div class="square" id="19"></div>
-    <div class="square" id="20"></div>
-    <div class="square" id="21"></div>
-    <div class="square" id="22"></div>
-    <div class="square" id="23"></div>
-    <div class="square" id="24"></div>
-    <div class="square" id="25"></div> -->
   </ng-container>
-  </div>
-  <button (click)="showMole()">hehe</button>
+</div>
+
+

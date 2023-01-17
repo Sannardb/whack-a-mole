@@ -14,7 +14,7 @@ export class MoleHoleComponent {
 
   state!: State;
 
-  // moles:Array<object> = [this.state];
+  mole(){}
 
   
   

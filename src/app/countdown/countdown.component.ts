@@ -16,8 +16,18 @@ export class CountdownComponent {
 
   state!: State;
 
+
    countdownTimer(){
      this._passInfoService.countdownTimer();
    }
+
+
+    moleUp(){
+      this._passInfoService.moleUp();
+    }
+
+    
+
+    
    
 }

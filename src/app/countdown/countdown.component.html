@@ -7,6 +7,6 @@
       <span>Points: </span>
       <span>{{_passInfoService.state.points}}</span>
   </div>
-  <button class="startBtn" [disabled]="_passInfoService.state.clicked" (click)="_passInfoService.countdownTimer(); _passInfoService.state.clicked = true;">Start Game</button>
+  <button class="startBtn" [disabled]="_passInfoService.state.clicked" (click)="_passInfoService.countdownTimer(); _passInfoService.state.clicked = true; moleUp()">Start Game</button>
 </div>
 <span class="gameOver">{{_passInfoService.state.gameOver}}</span>
