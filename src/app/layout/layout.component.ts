@@ -21,16 +21,16 @@ export class LayoutComponent {
   clicked!: true;
   points!: 0;
 
+
   
 
-
-
-    whackedMole(){
-      this._passInfoService.whackedMole();
+    whackedMole(i: number){
+      this._passInfoService.whackedMole(i);
 
     }
 
      moleUp(){
       this._passInfoService.moleUp();
      }
-}
+
+    }

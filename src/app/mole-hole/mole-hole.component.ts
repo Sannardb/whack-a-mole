@@ -14,9 +14,5 @@ export class MoleHoleComponent {
 
   state!: State;
 
-  mole(){}
-
-  
-  
 
 }
