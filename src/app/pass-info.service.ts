@@ -49,7 +49,7 @@ export class PassInfoService {
         this.state.clicked = false;
         this.state.gameOver = 'Game over, try again!'
         this.state.activeGame = false;
-        this.state.ids;
+        this.state.ids = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
         
         
         }
