@@ -5,13 +5,11 @@ export type State = {
   clicked: boolean,
   moleImage: string,
   lastHole: number,
-  time: number;
   activeGame: boolean,
   moleOne: number,
   moleTwo: number,
   moleThree: number,
-  isClicked: boolean,
-  ids: [
+  squares: [
     id: boolean,
     id: boolean,
     id: boolean,

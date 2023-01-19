@@ -1,7 +1,7 @@
 <div class="square-container">
-  <ng-container *ngFor="let square of _passInfoService.state.ids; let i = index">
+  <ng-container *ngFor="let square of _passInfoService.state.squares; let i = index">
     <div class="square" id="{{i}}">
-      <img *ngIf="_passInfoService.state.ids[i] == true"
+      <img *ngIf="_passInfoService.state.squares[i] == true"
         src="{{_passInfoService.state.moleImage}}" width="100px"
         alt=""
         (click)="whackedMole(i)">
