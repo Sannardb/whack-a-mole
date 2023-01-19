@@ -24,13 +24,14 @@ export class LayoutComponent {
 
   
 
-    whackedMole(i: number){
-      this._passInfoService.whackedMole(i);
+  whackedMole(i: number){
+    this._passInfoService.whackedMole(i);
+  }
 
-    }
 
-     moleUp(){
-      this._passInfoService.moleUp();
-     }
+  moleUp(){
+    this._passInfoService.moleUp();
+  }
 
-    }
+
+}
