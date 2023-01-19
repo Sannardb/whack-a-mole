@@ -26,6 +26,8 @@ export class CountdownComponent {
       this._passInfoService.moleUp();
     }
 
+
+
     
 
     

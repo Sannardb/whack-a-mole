@@ -31,7 +31,7 @@ export class LayoutComponent {
 
   moleUp(){
     this._passInfoService.moleUp();
-  }
+    }
 
 
 }

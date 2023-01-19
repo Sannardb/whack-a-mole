@@ -14,11 +14,9 @@ export class PassInfoService {
     gameOver: '',
     clicked: false,
     moleImage: 'https://www.decalsground.com/img_b/vinyl-decal-sticker-780.jpg',
-    lastHole: 0,
     activeGame: false,
-    moleOne: 0,
-    moleTwo: 0,
-    moleThree: 0,
+    moles: 0,
+    list: [],
     squares: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]  
   }
 
@@ -27,6 +25,9 @@ export class PassInfoService {
   randomHole: any;
   randomHole2: any;
   randomHole3: any;
+  timeout: any;
+  moleAppear: any;
+  hej: any;
   
 
   constructor() { }
@@ -56,107 +57,247 @@ export class PassInfoService {
 
 
 
-  whackedMole(i: number){
+  whackedMole(i: number){ 
+    console.log('whacked a mole');
     if(this.state.squares[i] == true){ // if the index from the template is true, set it to false to make it disappear, add one point
       this.state.squares[i] = false;
       this.state.points++;
+      this.state.moles--
+    
+
+    
+      // clearTimeout(this.timeout)
+  
     }
   }
 
 
-  randomTime(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min) + min);
-  }
+  // randomTime(min: number, max: number) {
+  //   return Math.floor(Math.random() * (max - min) + min);
+  // }
   
   
   moleUp(){
+    
+    this.myMoles()
+   
+  }
 
-    this.mole1()
-    this.mole2()
-    this.mole3()
-  
+  myGameLoop(){
+    return this.moleAppear = Math.floor(Math.random() * 100)
   }
 
 
-    mole1(){
+
+
+  /* myMoles(){
+
+        setInterval(() => {
+
+        console.log(this.state.moles);
+
+          if(this.state.moles < 3 && this.state.activeGame == true){
+
+            
+              this.myGameLoop()
+              if(this.moleAppear > 20){
+           
+
+                this.randomHole = Math.floor(Math.random() * 25);
+                if(this.state.squares[this.randomHole] == false){
+                  console.log('this is random hole' + this.randomHole)
+                  this.state.squares[this.randomHole] = true;
+                  this.state.moles++;
+               
+                }
+                
+                
+                 setTimeout((hole: number)=>{
+                  this.state.squares[hole] = false;
+                  this.state.moles--;
+                   console.log('hej ' + this.state.moles);
+                   console.log('this is another random hole!' + hole);
+     
+                  
+                }, 4000, this.randomHole)
+                
+              }
+            }
+          }, 1000)
+          
+
+      }
+    }
+
+*/
+
+
+    
+
+    
+
+  myMoles(){
+
+    
+
+    setInterval(() => {
+
+      console.log(this.state.moles);
+      if(this.state.moles < 3 && this.state.activeGame == true){
+      
+        this.myGameLoop()
+
+        if(this.moleAppear > 20){
+
+          this.randomHole = Math.floor(Math.random() * 25);
+          if(this.state.squares[this.randomHole] == false){
+            console.log('this is random hole' + this.randomHole)
+            this.state.squares[this.randomHole] = true;
+            this.state.moles++;
+          }
+          
+          setTimeout((hole: number)=>{
+            this.state.squares[hole] = false;
+            this.state.moles--;
+            console.log('hej ' + this.state.moles);
+            console.log('this is another random hole!' + hole);
+          }, 4000, this.randomHole)
+        
+        }
+      
+      }
+    
+    }, 1000)
+
+
+
+  }
+
+
+
+
+
+
+
+}
+
+
+  
+       
+    /*
+    
+    
+
+
+
+
+  /*
+
+  mole1(){
+
+    setTimeout(()=>{
 
       setInterval(() => {
         if(this.state.moleOne < 1 && this.state.activeGame == true){
-    
+      
           for(let i = 0; i < 1; i++){
-    
+      
+            
             this.randomHole = Math.floor(Math.random() * 25);
-            this.state.squares[this.randomHole] = true;
-            this.state.moleOne++;
-            console.log(this.state.squares[this.randomHole]);
-               
-            
-            setTimeout(()=>{
-              this.state.squares[this.randomHole] = false
-              this.state.moleOne--;
-            }, 4000)
+            if(this.state.squares[this.randomHole] == false){
+
+              this.state.squares[this.randomHole] = true;
+              this.state.moleOne++;
+             
+                 
+              this.timeout = setTimeout(()=>{
+                this.state.squares[this.randomHole] = false;
+                this.state.moleOne--;
+                
+              }, 4000)
+            }
           }
         }
-      }, this.randomTime(500, 700)) 
-    }
+      }, this.randomTime(100, 600))
+
+
+    }, this.randomTime(100, 600));
+
+      
+  }
 
 
 
-    mole2(){
+  mole2(){
+
+    setTimeout(()=>{
 
       setInterval(() => {
-
-        if(this.state.moleTwo < 1 && this.state.activeGame == true){
-    
+        if(this.state.moleTwo < 1 && this.state.activeGame == true){ 
+      
           for(let i = 0; i < 1; i++){
-            
+              
+           
             this.randomHole2 = Math.floor(Math.random() * 25);
-            this.state.squares[this.randomHole2] = true;
-            this.state.moleTwo++;
-            console.log(this.state.squares[this.randomHole2]);
-               
- 
-            setTimeout(()=>{
-              this.state.squares[this.randomHole2] = false
-              this.state.moleTwo--;
-            }, 4000)     
-          }
-        }
-      }, this.randomTime(100, 500)) 
-    }
-
-
-
-
-    mole3(){
-
-      setInterval(() => {
-
-        if(this.state.moleThree < 1 && this.state.activeGame == true){
     
-          for(let i = 0; i < 1; i++){
-            this.randomHole3 = Math.floor(Math.random() * 25);
- 
-            this.state.squares[this.randomHole3] = true;
-            this.state.moleThree++;
-            console.log(this.state.squares[this.randomHole3]);
-               
- 
-            setTimeout(()=>{
-
-              this.state.squares[this.randomHole3] = false
-              this.state.moleThree--;
-
-            }, 4000);
+            if(this.state.squares[this.randomHole2] == false){
+              this.state.squares[this.randomHole2] = true;
+              this.state.moleTwo++;
+              
+    
+              setTimeout(()=>{
+                this.state.squares[this.randomHole2] = false
+                this.state.moleTwo--;
+              
+              }, 4000)     
+            }
           }
         }
-      }, this.randomTime(500, 1000));
-    }
+      }, this.randomTime(1000, 2000)); 
 
-   
 
+    }, this.randomTime(1000, 2000));
 
   }
-    
-    
+
+
+
+
+  mole3(){
+
+    setTimeout(() => {
+
+
+      setInterval(() => {
+  
+        if(this.state.moleThree < 1 && this.state.activeGame == true){
+      
+          for(let i = 0; i < 1; i++){
+              this.randomHole3 = Math.floor(Math.random() * 25);
+  
+            if(this.state.squares[this.randomHole3] == false){
+              
+              this.state.squares[this.randomHole3] = true;
+              this.state.moleThree++;
+              
+   
+              setTimeout(()=>{
+  
+                this.state.squares[this.randomHole3] = false
+                this.state.moleThree--;
+            
+  
+              }, 4000);
+            }
+          }
+        }
+      }, this.randomTime(500, 2000));
+
+
+    }, this.randomTime(500, 2000));
+
+  }
+*/
+  
+
 

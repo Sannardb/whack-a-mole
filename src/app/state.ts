@@ -4,11 +4,9 @@ export type State = {
   points: number,
   clicked: boolean,
   moleImage: string,
-  lastHole: number,
   activeGame: boolean,
-  moleOne: number,
-  moleTwo: number,
-  moleThree: number,
+  moles: number,
+  list: number [],
   squares: [
     id: boolean,
     id: boolean,
