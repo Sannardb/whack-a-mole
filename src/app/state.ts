@@ -1,12 +1,12 @@
 export type State = {
-  counter: number,
+  countdownTimer: number,
   gameOver: string,
   points: number,
   clicked: boolean,
   moleImage: string,
   activeGame: boolean,
   moles: number,
-  list: number [],
+  chanceNumber: number,
   squares: [
     id: boolean,
     id: boolean,
