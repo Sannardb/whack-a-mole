@@ -18,8 +18,6 @@ export class LayoutComponent {
 
 
   state!: State;
-  clicked!: true;
-  points!: 0;
 
 
   

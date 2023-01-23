@@ -23,7 +23,6 @@ export class PassInfoService
     squares: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]  
   }
 
-  timer: any;
   interval: any;
   randomHole: any;
   clearTimeout: any;
@@ -91,7 +90,7 @@ export class PassInfoService
         }   
       }
         
-    }, 200);
+    }, 500);
   }
   
   
