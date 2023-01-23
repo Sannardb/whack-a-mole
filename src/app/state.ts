@@ -1,4 +1,5 @@
-export type State = {
+export type State =
+{
   countdownTimer: number,
   gameOver: string,
   points: number,
@@ -7,7 +8,8 @@ export type State = {
   activeGame: boolean,
   moles: number,
   chanceNumber: number,
-  squares: [
+  squares:
+  [
     id: boolean,
     id: boolean,
     id: boolean,
