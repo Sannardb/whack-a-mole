@@ -90,7 +90,7 @@ export class PassInfoService
         }   
       }
         
-    }, 500);
+    }, 1000);
   }
   
   
